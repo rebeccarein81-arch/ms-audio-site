@@ -6,190 +6,164 @@
     <title>MS Audio | Precision Low Voltage & Security</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #0f172a; } /* Deep slate background */
-        .glass { 
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        @keyframes glow {
+            0% { border-color: rgba(59, 130, 246, 0.2); box-shadow: 0 0 5px rgba(59, 130, 246, 0.1); }
+            50% { border-color: rgba(59, 130, 246, 0.6); box-shadow: 0 0 20px rgba(59, 130, 246, 0.2); }
+            100% { border-color: rgba(59, 130, 246, 0.2); box-shadow: 0 0 5px rgba(59, 130, 246, 0.1); }
         }
-        .tech-gradient {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        body { background-color: #020617; }
+        .cyber-card { 
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.4), rgba(15, 23, 42, 0.9));
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.3s ease;
         }
-        .accent-border {
-            position: relative;
+        .cyber-card:hover {
+            transform: translateY(-5px);
+            animation: glow 2s infinite;
         }
-        .accent-border::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 4px;
-            background: #3b82f6;
-            transition: width 0.3s ease;
+        .hero-text {
+            text-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
         }
-        .card-hover:hover .accent-border::after {
+        .scanline {
             width: 100%;
+            height: 2px;
+            background: rgba(59, 130, 246, 0.1);
+            position: absolute;
+            animation: scan 4s linear infinite;
+        }
+        @keyframes scan {
+            0% { top: 0; }
+            100% { top: 100%; }
         }
     </style>
 </head>
-<body class="text-slate-200 font-sans antialiased">
+<body class="text-slate-300 font-sans antialiased overflow-x-hidden">
 
-    <div class="bg-blue-600/10 border-b border-blue-500/20 text-blue-400 text-[10px] py-2 px-6 text-center font-bold tracking-[0.2em] uppercase">
-        System Status: Operational • Serving Jackson, NJ & Nationwide
-    </div>
+    <div class="w-full h-1 bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,1)] sticky top-0 z-[60]"></div>
 
-    <nav class="glass sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <img src="ms-audio-logo.png" alt="MS Audio" class="h-10 md:h-12 w-auto brightness-110">
-            <div class="flex items-center space-x-6">
-                <a href="tel:7328336446" class="hidden md:block text-xs font-black tracking-widest text-slate-400 hover:text-blue-400 transition uppercase">732-833-6446</a>
-                <a href="contact.html" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded-full text-xs font-black transition uppercase tracking-widest shadow-lg shadow-blue-600/20">Request Quote</a>
+    <nav class="bg-slate-950/80 backdrop-blur-lg border-b border-white/5 sticky top-1 z-50">
+        <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+            <img src="ms-audio-logo.png" alt="MS Audio" class="h-10 md:h-12 w-auto brightness-125">
+            <div class="flex items-center space-x-8">
+                <a href="tel:7328336446" class="hidden md:block text-[10px] font-black tracking-[0.2em] text-blue-400 hover:text-white transition uppercase">EST. 1996 • 732.833.6446</a>
+                <a href="contact.html" class="bg-blue-600 text-white px-8 py-2.5 rounded-sm text-[10px] font-black transition uppercase tracking-[0.2em] hover:bg-white hover:text-blue-600 border border-blue-600">Request Quote</a>
             </div>
         </div>
     </nav>
 
-    <header class="relative h-[80vh] flex items-center overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/80 to-transparent z-10"></div>
-        <img src="theater.jpg" class="absolute inset-0 w-full h-full object-cover grayscale-[20%]" alt="High Tech Install">
+    <header class="relative min-h-screen flex items-center pt-20">
+        <div class="scanline"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/40 to-transparent z-10"></div>
+        <img src="theater.jpg" class="absolute inset-0 w-full h-full object-cover opacity-40 grayscale" alt="Systems">
         
-        <div class="relative z-20 max-w-7xl mx-auto px-6 w-full">
-            <div class="max-w-2xl">
-                <span class="text-blue-500 font-black tracking-[0.4em] uppercase text-xs mb-4 block">Established 1996</span>
-                <h1 class="text-5xl md:text-8xl font-black text-white uppercase tracking-tighter leading-[0.9] mb-6">
-                    Future-Proof <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 italic">Systems</span>
-                </h1>
-                <p class="text-slate-400 text-lg md:text-xl font-light mb-10 max-w-lg leading-relaxed border-l border-blue-600/50 pl-6">
-                    Nationwide leaders in luxury audio design, commercial infrastructure, and 24/7 security integration.
-                </p>
-                <div class="flex gap-4">
-                    <a href="contact.html" class="bg-white text-slate-950 px-8 py-4 rounded-full font-black uppercase tracking-widest hover:bg-blue-500 hover:text-white transition shadow-xl">Start Build</a>
+        <div class="relative z-20 max-w-7xl mx-auto px-8 w-full py-20">
+            <div class="max-w-3xl">
+                <div class="flex items-center space-x-4 mb-6">
+                    <span class="h-px w-12 bg-blue-500"></span>
+                    <span class="text-blue-500 font-black tracking-[0.4em] uppercase text-[10px]">Nationwide Deployment</span>
                 </div>
+                <h1 class="text-6xl md:text-9xl font-black text-white uppercase tracking-tighter leading-none mb-8 hero-text">
+                    NXT-GEN<br><span class="text-blue-600 italic">SYSTEMS</span>
+                </h1>
+                <p class="text-slate-400 text-xl font-light mb-12 max-w-lg leading-relaxed border-l-2 border-blue-600 pl-8">
+                    Defining the standard in luxury audio, commercial networks, and 24/7 intelligence integration.
+                </p>
+                <a href="contact.html" class="inline-block bg-white text-black px-12 py-5 font-black uppercase tracking-[0.2em] hover:bg-blue-600 hover:text-white transition">Initialize Build</a>
             </div>
         </div>
     </header>
 
-    <section class="py-32 relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-12 gap-16 items-start">
-                <div class="lg:col-span-7">
-                    <h2 class="text-xs font-black text-blue-500 uppercase tracking-[0.5em] mb-6">Execution & Pedigree</h2>
-                    <p class="text-3xl md:text-4xl font-bold text-white mb-8 tracking-tight leading-tight uppercase">
-                        Nearly three decades of <span class="text-slate-500 italic">uncompromising</span> technology deployment.
+    <main class="relative z-20 -mt-20">
+        <section class="max-w-7xl mx-auto px-8 py-20">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="cyber-card p-12 rounded-sm">
+                    <h2 class="text-blue-500 font-black tracking-[0.3em] uppercase text-xs mb-8">Pedigree</h2>
+                    <p class="text-4xl font-black text-white uppercase tracking-tighter mb-8 italic">Tri-State Born.<br>Nationwide Impact.</p>
+                    <p class="text-slate-400 leading-relaxed text-lg font-light mb-6">
+                        Since 1996, we have engineered uncompromising technology. From local NJ headquarters to international installs in St. Croix, our footprint is global.
                     </p>
-                    <div class="space-y-6 text-slate-400 text-lg font-light leading-relaxed">
-                        <p>We started in 1996 in the Tri-State area and have since scaled to a <span class="text-white font-medium italic uppercase">nationwide force</span>, including projects in St. Croix and across the US Virgin Islands.</p>
-                        <p>Our portfolio includes complex automation and theater systems for some of the world's most recognized brands. We are contracted for our precision, scalability, and long-term reliability.</p>
+                    <div class="grid grid-cols-2 gap-4 mt-12">
+                        <div class="border-l border-blue-600/30 pl-4">
+                            <p class="text-2xl font-black text-white leading-none mb-1">29</p>
+                            <p class="text-[10px] uppercase tracking-widest text-slate-500">Years Exp</p>
+                        </div>
+                        <div class="border-l border-blue-600/30 pl-4">
+                            <p class="text-2xl font-black text-white leading-none mb-1">Global</p>
+                            <p class="text-[10px] uppercase tracking-widest text-slate-500">Reach</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="lg:col-span-5 glass p-8 rounded-3xl">
-                    <p class="text-[10px] font-black uppercase tracking-widest text-blue-400 mb-8 border-b border-white/10 pb-4">Institutional Partners</p>
-                    <div class="grid grid-cols-1 gap-y-4">
-                        <div class="flex justify-between border-b border-white/5 pb-2">
-                            <span class="text-white font-bold uppercase tracking-tighter text-sm">Fidelity Investments</span>
-                            <span class="text-blue-500 font-mono text-xs uppercase">Verified</span>
+                <div class="cyber-card p-12 rounded-sm bg-blue-600/5">
+                    <h2 class="text-blue-500 font-black tracking-[0.3em] uppercase text-xs mb-10 text-center">Contracted By</h2>
+                    <div class="grid grid-cols-1 gap-6">
+                        <div class="flex items-center justify-between border-b border-white/5 pb-4">
+                            <span class="font-black text-white uppercase tracking-tighter">Wells Fargo</span>
+                            <span class="text-[8px] font-mono text-blue-500 px-2 py-1 border border-blue-500/20 rounded">STATUS: ACTIVE</span>
                         </div>
-                        <div class="flex justify-between border-b border-white/5 pb-2">
-                            <span class="text-white font-bold uppercase tracking-tighter text-sm">Wells Fargo</span>
-                            <span class="text-blue-500 font-mono text-xs uppercase">Verified</span>
+                        <div class="flex items-center justify-between border-b border-white/5 pb-4">
+                            <span class="font-black text-white uppercase tracking-tighter">Fidelity Investments</span>
+                            <span class="text-[8px] font-mono text-blue-500 px-2 py-1 border border-blue-500/20 rounded">STATUS: ACTIVE</span>
                         </div>
-                        <div class="flex justify-between border-b border-white/5 pb-2">
-                            <span class="text-white font-bold uppercase tracking-tighter text-sm">Barnes & Noble</span>
-                            <span class="text-blue-500 font-mono text-xs uppercase">Verified</span>
+                        <div class="flex items-center justify-between border-b border-white/5 pb-4">
+                            <span class="font-black text-white uppercase tracking-tighter">Buffalo Wild Wings</span>
+                            <span class="text-[8px] font-mono text-blue-500 px-2 py-1 border border-blue-500/20 rounded">STATUS: ACTIVE</span>
                         </div>
-                        <div class="flex justify-between border-b border-white/5 pb-2">
-                            <span class="text-white font-bold uppercase tracking-tighter text-sm">Buffalo Wild Wings</span>
-                            <span class="text-blue-500 font-mono text-xs uppercase">Verified</span>
+                        <div class="flex items-center justify-between border-b border-white/5 pb-4">
+                            <span class="font-black text-white uppercase tracking-tighter">Barnes & Noble</span>
+                            <span class="text-[8px] font-mono text-blue-500 px-2 py-1 border border-blue-500/20 rounded">STATUS: ACTIVE</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="py-32 bg-slate-950">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="glass p-10 rounded-3xl card-hover">
-                    <div class="accent-border pb-8 mb-8">
-                        <h3 class="text-white font-black uppercase tracking-tighter text-2xl">Sound & Video</h3>
-                    </div>
-                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
-                        <li>System Design & CAD</li>
-                        <li>Multi-Zone Cinematic Audio</li>
-                        <li>Digital Signage Solutions</li>
-                        <li>Satellite Integration</li>
-                    </ul>
-                </div>
-                <div class="glass p-10 rounded-3xl card-hover">
-                    <div class="accent-border pb-8 mb-8">
-                        <h3 class="text-white font-black uppercase tracking-tighter text-2xl">Data & Comms</h3>
-                    </div>
-                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
-                        <li>Structured Data Cabling</li>
-                        <li>High-Density Networking</li>
-                        <li>Enterprise Intercoms</li>
-                        <li>Fiber Optic Backbone</li>
-                    </ul>
-                </div>
-                <div class="glass p-10 rounded-3xl card-hover">
-                    <div class="accent-border pb-8 mb-8">
-                        <h3 class="text-white font-black uppercase tracking-tighter text-2xl">Smart Control</h3>
-                    </div>
-                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
-                        <li>Whole-Home Automation</li>
-                        <li>Central Vacuum Systems</li>
-                        <li>Access Control Matrices</li>
-                        <li>Technical Consultation</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 max-w-7xl mx-auto px-6">
-        <div class="glass rounded-[3rem] p-12 overflow-hidden relative">
-            <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 blur-[120px] rounded-full"></div>
-            <div class="flex flex-col lg:flex-row items-center justify-between gap-16 relative z-10">
-                <div class="lg:w-3/5">
-                    <img src="integriti.png" alt="Integriti Protection" class="h-24 w-auto mb-8 brightness-0 invert">
-                    <p class="text-slate-300 text-xl font-light leading-relaxed mb-8">
-                        Our dedicated security infrastructure. Providing 24/7 UL Listed monitoring in partnership with global industry leaders.
-                    </p>
-                    <div class="flex gap-6">
-                        <div class="flex items-center text-xs font-black uppercase tracking-widest text-blue-400">
-                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-3 animate-pulse"></span> Professional Monitoring
-                        </div>
-                        <div class="flex items-center text-xs font-black uppercase tracking-widest text-blue-400">
-                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-3 animate-pulse"></span> Smart Integration
+        <section class="max-w-7xl mx-auto px-8 py-20 mb-20">
+            <div class="cyber-card p-12 lg:p-20 rounded-sm relative overflow-hidden group">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 blur-[100px] group-hover:bg-blue-600/20 transition-all"></div>
+                
+                <div class="flex flex-col lg:flex-row items-center gap-20">
+                    <div class="lg:w-2/3">
+                        <img src="integriti.png" alt="Integriti" class="h-24 w-auto mb-10 brightness-0 invert opacity-90">
+                        <h3 class="text-4xl font-black text-white uppercase tracking-tighter mb-8 leading-tight">Advanced Intelligence<br>Monitoring</h3>
+                        <p class="text-slate-400 text-xl font-light leading-relaxed mb-10">
+                            24/7 UL Listed surveillance infrastructure. Total security integration across residential and commercial estates.
+                        </p>
+                        <div class="flex flex-wrap gap-8">
+                            <div class="flex items-center text-[10px] font-black text-blue-400 tracking-[0.2em] uppercase">
+                                <span class="w-1.5 h-1.5 bg-blue-500 mr-3 shadow-[0_0_10px_rgba(59,130,246,1)]"></span> Smart Control
+                            </div>
+                            <div class="flex items-center text-[10px] font-black text-blue-400 tracking-[0.2em] uppercase">
+                                <span class="w-1.5 h-1.5 bg-blue-500 mr-3 shadow-[0_0_10px_rgba(59,130,246,1)]"></span> Real-Time Alerts
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="lg:w-2/5 flex flex-col items-center bg-white/5 p-12 rounded-[2rem] border border-white/5">
-                    <p class="text-[10px] uppercase tracking-widest text-slate-500 mb-8 font-bold">Strategic Partner</p>
-                    <img src="affiliatedmonitoring.png" alt="Affiliated" class="h-10 w-auto opacity-80">
+                    <div class="lg:w-1/3 text-center border-l border-white/5 pl-12">
+                        <p class="text-[10px] font-black tracking-widest text-slate-500 mb-8 uppercase">Partner Hub</p>
+                        <img src="affiliatedmonitoring.png" alt="Affiliated" class="h-10 w-auto opacity-50 hover:opacity-100 transition">
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <footer class="py-20 border-t border-white/5 bg-slate-950">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-12">
-            <div class="text-center md:text-left">
-                <img src="ms-audio-logo.png" alt="MS Audio" class="h-8 mb-6 mx-auto md:mx-0 opacity-40 grayscale">
-                <p class="text-xs text-slate-500 uppercase tracking-widest leading-loose">
+    <footer class="bg-black py-20 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-3 gap-16 items-start">
+            <div>
+                <img src="ms-audio-logo.png" alt="Logo" class="h-8 mb-8 grayscale opacity-50">
+                <p class="text-[10px] font-bold text-slate-500 tracking-widest leading-loose uppercase">
                     434 W Commodore Blvd., Suite 25<br>
                     Jackson, NJ 08527
                 </p>
             </div>
             <div class="text-center">
-                <p class="text-[10px] text-slate-600 uppercase tracking-[0.4em] mb-4">Design • Sales • Installation</p>
-                <p class="text-slate-400 font-black uppercase text-sm">&copy; 2026 MS Audio & Integriti Protection</p>
+                <h4 class="text-[10px] font-black text-blue-500 tracking-[0.3em] uppercase mb-6">Contact Control</h4>
+                <a href="mailto:Rebecca@MSAudio.net" class="text-lg font-black text-white hover:text-blue-400 transition">Rebecca@MSAudio.net</a>
             </div>
-            <div class="text-center md:text-right">
-                <p class="text-xs text-slate-500 uppercase tracking-widest font-bold">Licensed & Insured</p>
-                <p class="text-blue-500 font-mono text-xs mt-2 uppercase tracking-widest">NJ License # 12345</p>
+            <div class="text-right">
+                <p class="text-[10px] font-black text-slate-500 tracking-[0.3em] uppercase mb-4">Verification</p>
+                <p class="text-white font-black text-xs uppercase tracking-tighter">Licensed • Insured • 1996 - 2026</p>
             </div>
         </div>
     </footer>
