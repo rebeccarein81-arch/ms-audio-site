@@ -7,113 +7,139 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @keyframes scan {
-            0% { top: 0; }
+            0% { top: 0%; }
             100% { top: 100%; }
         }
-        @keyframes decode {
-            0% { opacity: 0; filter: blur(10px); letter-spacing: 20px; }
-            100% { opacity: 1; filter: blur(0); letter-spacing: -0.05em; }
+
+        /* The Glitch Animation */
+        @keyframes glitch {
+            0% { transform: translate(0); text-shadow: -2px 0 #ff00c1, 2px 0 #00fff9; }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); text-shadow: 2px 0 #ff00c1, -2px 0 #00fff9; }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); text-shadow: -2px 0 #ff00c1, 2px 0 #00fff9; }
+            100% { transform: translate(0); }
         }
+
+        @keyframes noise {
+            0%, 100% { background-position: 0 0; }
+            10% { background-position: -5% -10%; }
+            20% { background-position: -15% 5%; }
+            30% { background-position: 7% -25%; }
+            40% { background-position: 20% 10%; }
+            50% { background-position: -25% 20%; }
+            60% { background-position: 15% 5%; }
+            70% { background-position: 0% 15%; }
+            80% { background-position: 25% 35%; }
+            90% { background-position: -10% 10%; }
+        }
+
         body { background-color: #020617; overflow-x: hidden; }
         
+        /* Centered Laser Scanline */
         .scanline {
             width: 100%;
-            height: 4px;
-            background: linear-gradient(to bottom, transparent, #3b82f6, transparent);
+            height: 10px;
+            background: linear-gradient(to bottom, transparent, rgba(59, 130, 246, 0.5), transparent);
             position: absolute;
             z-index: 30;
-            animation: scan 6s linear infinite;
-            opacity: 0.5;
+            animation: scan 8s linear infinite;
+            pointer-events: none;
         }
 
         .hero-bg {
-            /* Using a high-quality placeholder theater image to ensure no broken links */
-            background-image: linear-gradient(to bottom, rgba(2, 6, 23, 0.4), rgba(2, 6, 23, 0.9)), 
+            background-image: linear-gradient(to bottom, rgba(2, 6, 23, 0.5), rgba(2, 6, 23, 0.95)), 
                               url('https://images.unsplash.com/photo-1593784991095-a205039470b6?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
         }
 
-        .decode-text {
-            animation: decode 1.5s cubic-bezier(0.21, 1.02, 0.73, 1) forwards;
+        /* Glitch effect applied to text */
+        .glitch-text {
+            display: inline-block;
+            animation: glitch 1s infinite;
+            animation-timing-function: steps(2, end);
         }
 
         .cyber-card { 
-            background: rgba(15, 23, 42, 0.6);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(59, 130, 246, 0.2);
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .cyber-card:hover {
+            border-color: rgba(59, 130, 246, 0.6);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
         }
     </style>
 </head>
 <body class="text-slate-300 font-sans antialiased">
 
-    <div class="w-full h-1 bg-blue-600 shadow-[0_0_20px_rgba(37,99,235,0.8)] sticky top-0 z-[60]"></div>
+    <div class="w-full h-1 bg-blue-600 shadow-[0_0_25px_rgba(37,99,235,1)] sticky top-0 z-[60]"></div>
 
-    <nav class="bg-slate-950/60 backdrop-blur-md border-b border-white/5 sticky top-1 z-50">
-        <div class="max-w-7xl mx-auto px-8 py-4 flex justify-between items-center">
-            <img src="ms-audio-logo.png" alt="MS Audio" class="h-10 w-auto brightness-125">
-            <div class="flex items-center space-x-6">
-                <a href="tel:7328336446" class="hidden md:block text-[10px] font-black tracking-widest text-blue-400 uppercase">732.833.6446</a>
-                <a href="contact.html" class="border border-blue-600 text-white px-6 py-2 rounded-sm text-[10px] font-black uppercase tracking-widest hover:bg-blue-600 transition">Contact</a>
-            </div>
+    <nav class="bg-slate-950/40 backdrop-blur-lg border-b border-white/5 sticky top-1 z-50">
+        <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+            <img src="ms-audio-logo.png" alt="MS Audio" class="h-10 w-auto brightness-150">
+            <a href="contact.html" class="bg-blue-600 text-white px-8 py-2 rounded-sm text-[10px] font-black uppercase tracking-[0.2em] hover:bg-white hover:text-blue-600 transition">Contact</a>
         </div>
     </nav>
 
-    <header class="relative h-[90vh] flex items-center justify-center text-center hero-bg overflow-hidden">
+    <header class="relative h-screen flex items-center justify-center text-center hero-bg overflow-hidden">
         <div class="scanline"></div>
         
-        <div class="relative z-20 max-w-4xl px-8">
-            <div class="inline-block border border-blue-500/30 px-4 py-1 mb-8 bg-blue-500/10">
-                <span class="text-blue-400 font-black tracking-[0.5em] uppercase text-[9px]">System Initialization: Complete</span>
+        <div class="relative z-20 max-w-5xl px-8">
+            <div class="mb-6 flex justify-center items-center space-x-3">
+                <span class="w-2 h-2 bg-blue-500 rounded-full animate-pulse shadow-[0_0_10px_#3b82f6]"></span>
+                <span class="text-blue-400 font-black tracking-[0.5em] uppercase text-[9px]">Interface Status: Active</span>
             </div>
             
-            <h1 class="decode-text text-6xl md:text-9xl font-black text-white uppercase tracking-tighter leading-none mb-8">
-                PRECISION <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-700 italic">INTEGRATION</span>
+            <h1 class="text-6xl md:text-[9rem] font-black text-white uppercase tracking-tighter leading-none mb-6">
+                <span class="glitch-text" style="animation-delay: 0.1s;">NXT</span><span class="glitch-text" style="animation-delay: 0.3s;">GEN</span><br>
+                <span class="text-blue-600 italic glitch-text" style="animation-delay: 0.5s;">PRECISION</span>
             </h1>
             
-            <p class="text-slate-300 text-lg md:text-xl font-light mb-12 max-w-2xl mx-auto leading-relaxed">
-                Jackson's premier source for luxury sound design, high-density networking, and 24/7 intelligence surveillance.
+            <p class="text-slate-400 text-lg md:text-2xl font-light mb-12 max-w-2xl mx-auto leading-relaxed italic border-y border-white/5 py-4">
+                Redefining Sound Design, Commercial Networks, and 24/7 Security Integration.
             </p>
             
-            <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                <a href="contact.html" class="bg-blue-600 text-white px-12 py-4 font-black uppercase tracking-widest hover:bg-white hover:text-blue-600 transition shadow-[0_0_20px_rgba(37,99,235,0.4)]">
-                    Initialize Build
-                </a>
-            </div>
+            <a href="contact.html" class="inline-block bg-white text-black px-12 py-5 font-black uppercase tracking-[0.3em] hover:bg-blue-600 hover:text-white transition shadow-2xl">
+                Initialize Build
+            </a>
         </div>
     </header>
 
-    <section class="py-32 bg-slate-950">
-        <div class="max-w-4xl mx-auto px-8 text-center">
-            <h2 class="text-blue-500 font-black tracking-[0.3em] uppercase text-[10px] mb-8">Verification: Established 1996</h2>
-            <p class="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-10 leading-tight">
-                Tri-State Roots.<br>Nationwide Deployment.
+    <section class="py-32 bg-[#020617] relative">
+        <div class="max-w-4xl mx-auto px-8 text-center relative z-10">
+            <h2 class="text-blue-500 font-black tracking-[0.3em] uppercase text-[10px] mb-10">Pedigree // Est. 1996</h2>
+            <p class="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-12 italic leading-none">
+                30 Years of <span class="text-blue-700 underline decoration-blue-500 underline-offset-8">Execution</span>
             </p>
-            <div class="text-slate-400 text-lg font-light leading-relaxed space-y-6">
-                <p>We started in 1996 as a commercial and residential installation company in the Tri-State area. Today, we have grown into a nationwide force with projects spanning the country and the US Virgin Islands.</p>
-                <p>Contracted by global financial institutions and national retail brands, we provide the same level of enterprise precision to our residential luxury theater and automation clients.</p>
+            <div class="text-slate-400 text-lg font-light leading-relaxed space-y-8 text-center">
+                <p>Starting in the Tri-State area in 1996, we have expanded into a nationwide technology leader, servicing elite clients from local Jackson estates to international installations in St. Croix.</p>
+                <p>Contracted by global financial firms and national retail chains, we bring the same enterprise-grade stability to every home theater and security system we deploy.</p>
             </div>
         </div>
     </section>
 
     <section class="py-24 max-w-7xl mx-auto px-8">
-        <div class="cyber-card p-12 md:p-20 rounded-sm flex flex-col items-center text-center">
-            <img src="integriti.png" alt="Integriti" class="h-20 w-auto mb-10 brightness-0 invert">
-            <h3 class="text-4xl font-black text-white uppercase tracking-tighter mb-6">Integriti Protection</h3>
-            <p class="text-slate-400 text-lg max-w-2xl mb-12">
-                Our 24/7 intelligence monitoring division. Secured by UL-Listed infrastructure and real-time smart integration.
+        <div class="cyber-card p-16 rounded-sm text-center border border-white/5 relative overflow-hidden group">
+            <div class="absolute inset-0 bg-blue-600/5 opacity-0 group-hover:opacity-100 transition"></div>
+            <img src="integriti.png" alt="Integriti" class="h-20 w-auto mx-auto mb-10 brightness-0 invert">
+            <h3 class="text-3xl font-black text-white uppercase tracking-tighter mb-6">Integriti Protection</h3>
+            <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-12">
+                24/7 Intelligence Monitoring. Professional UL-Listed security infrastructure for residential and commercial assets.
             </p>
-            <div class="flex gap-12 items-center grayscale opacity-60">
-                <p class="text-[10px] font-black uppercase tracking-widest">Authorized Partner</p>
-                <img src="affiliatedmonitoring.png" alt="Affiliated" class="h-8 w-auto">
+            <div class="flex justify-center items-center gap-12 opacity-40">
+                <span class="text-[10px] font-black tracking-widest uppercase">Partnered with</span>
+                <img src="affiliatedmonitoring.png" alt="Affiliated" class="h-6 w-auto">
             </div>
         </div>
     </section>
 
     <footer class="py-20 border-t border-white/5 text-center">
-        <img src="ms-audio-logo.png" alt="MS Audio" class="h-8 mx-auto mb-8 grayscale opacity-30">
-        <p class="text-[10px] font-black text-slate-500 tracking-[0.3em] uppercase mb-4">434 W Commodore Blvd • Jackson • NJ</p>
-        <p class="text-white font-black text-xs uppercase tracking-tighter">Licensed & Insured • &copy; 2026</p>
+        <p class="text-[9px] font-black text-slate-600 tracking-[0.5em] uppercase mb-4">Jackson, NJ • Nationwide • St. Croix</p>
+        <p class="text-white font-black text-xs uppercase tracking-tighter">Licensed • Insured • &copy; 2026</p>
     </footer>
 
 </body>
