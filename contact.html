@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Quote | MS Audio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans">
+
+    <nav class="bg-white border-b border-gray-200 py-6">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-black text-blue-900 tracking-tighter uppercase">MS AUDIO</a>
+            <a href="index.html" class="text-sm font-bold text-blue-700 hover:underline">← Back to Home</a>
+        </div>
+    </nav>
+
+    <main class="py-20 px-6">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-4xl font-black text-blue-900 mb-4 text-center uppercase">Get a Free Estimate</h2>
+            <p class="text-gray-600 text-center mb-12">Select your project type and we will reach out to schedule a consultation.</p>
+
+            <form action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST" class="bg-white p-10 rounded-3xl shadow-xl border border-gray-200">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-500 mb-2">Name</label>
+                        <input type="text" name="name" required class="w-full p-4 bg-gray-50 border rounded-xl outline-none focus:ring-2 focus:ring-blue-600">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-500 mb-2">Phone</label>
+                        <input type="tel" name="phone" required class="w-full p-4 bg-gray-50 border rounded-xl outline-none focus:ring-2 focus:ring-blue-600">
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-xs font-bold uppercase text-gray-500 mb-2">Primary Service</label>
+                    <select name="service" class="w-full p-4 bg-gray-50 border rounded-xl outline-none focus:ring-2 focus:ring-blue-600">
+                        <option>Alarm Systems & Monitoring</option>
+                        <option>Home Theater Design</option>
+                        <option>CCTV / Surveillance</option>
+                        <option>Multi-Zone Audio & Video</option>
+                        <option>Phone / Intercom Systems</option>
+                        <option>Satellite Systems</option>
+                    </select>
+                </div>
+
+                <div class="mb-8">
+                    <label class="block text-xs font-bold uppercase text-gray-500 mb-2">Tell us about your project</label>
+                    <textarea name="message" rows="5" class="w-full p-4 bg-gray-50 border rounded-xl outline-none focus:ring-2 focus:ring-blue-600"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-blue-700 text-white font-black py-5 rounded-2xl hover:bg-blue-800 transition uppercase tracking-widest shadow-lg">
+                    Send Request
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="py-10 text-center text-gray-400 text-xs uppercase tracking-widest">
+        &copy; 2026 MS Audio, Inc.
+    </footer>
+
+</body>
+</html>
