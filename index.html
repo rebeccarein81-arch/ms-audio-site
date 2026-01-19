@@ -3,165 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MS Audio | Home Security, Sound Design & Installation</title>
+    <title>MS Audio | Precision Low Voltage & Security</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0f172a; } /* Deep slate background */
+        .glass { 
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .tech-gradient {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+        .accent-border {
+            position: relative;
+        }
+        .accent-border::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        .card-hover:hover .accent-border::after {
+            width: 100%;
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-slate-900 font-sans">
+<body class="text-slate-200 font-sans antialiased">
 
-    <div class="bg-blue-900 text-white text-[10px] md:text-xs py-2 px-6 text-center font-bold tracking-widest uppercase">
-        Professional Low Voltage Solutions | Serving Jackson, NJ & Nationwide
+    <div class="bg-blue-600/10 border-b border-blue-500/20 text-blue-400 text-[10px] py-2 px-6 text-center font-bold tracking-[0.2em] uppercase">
+        System Status: Operational • Serving Jackson, NJ & Nationwide
     </div>
 
-    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <nav class="glass sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center">
-                <img src="ms-audio-logo.png" alt="MS Audio Sound Inc Logo" class="h-10 md:h-14 w-auto">
-            </div>
-            
-            <div class="flex items-center space-x-4 md:space-x-8">
-                <a href="tel:7328336446" class="hidden md:block text-sm font-bold text-blue-800 hover:text-blue-600 transition">732-833-6446</a>
-                <a href="contact.html" class="bg-blue-700 text-white px-6 py-2 rounded-lg text-sm font-bold hover:bg-blue-800 transition uppercase tracking-wide">Request Quote</a>
+            <img src="ms-audio-logo.png" alt="MS Audio" class="h-10 md:h-12 w-auto brightness-110">
+            <div class="flex items-center space-x-6">
+                <a href="tel:7328336446" class="hidden md:block text-xs font-black tracking-widest text-slate-400 hover:text-blue-400 transition uppercase">732-833-6446</a>
+                <a href="contact.html" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2 rounded-full text-xs font-black transition uppercase tracking-widest shadow-lg shadow-blue-600/20">Request Quote</a>
             </div>
         </div>
     </nav>
 
-    <header class="relative h-[60vh] flex items-center bg-slate-900 overflow-hidden">
-        <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
-        <img src="theater.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Home Theater Installation">
-        <div class="relative z-20 max-w-5xl mx-auto px-6 text-center text-white">
-            <h2 class="text-5xl md:text-7xl font-extrabold mb-6 uppercase italic tracking-tighter">Precision Low Voltage</h2>
-            <p class="text-lg md:text-2xl text-slate-200 font-light mb-10 max-w-2xl mx-auto leading-relaxed">Sales, Design, and Professional Installation of Custom Audio, Video, and Security Systems.</p>
-            <a href="contact.html" class="inline-block bg-blue-700 hover:bg-blue-800 text-white px-10 py-4 rounded-xl text-lg font-bold transition shadow-lg uppercase tracking-widest">Get Started</a>
+    <header class="relative h-[80vh] flex items-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/80 to-transparent z-10"></div>
+        <img src="theater.jpg" class="absolute inset-0 w-full h-full object-cover grayscale-[20%]" alt="High Tech Install">
+        
+        <div class="relative z-20 max-w-7xl mx-auto px-6 w-full">
+            <div class="max-w-2xl">
+                <span class="text-blue-500 font-black tracking-[0.4em] uppercase text-xs mb-4 block">Established 1996</span>
+                <h1 class="text-5xl md:text-8xl font-black text-white uppercase tracking-tighter leading-[0.9] mb-6">
+                    Future-Proof <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 italic">Systems</span>
+                </h1>
+                <p class="text-slate-400 text-lg md:text-xl font-light mb-10 max-w-lg leading-relaxed border-l border-blue-600/50 pl-6">
+                    Nationwide leaders in luxury audio design, commercial infrastructure, and 24/7 security integration.
+                </p>
+                <div class="flex gap-4">
+                    <a href="contact.html" class="bg-white text-slate-950 px-8 py-4 rounded-full font-black uppercase tracking-widest hover:bg-blue-500 hover:text-white transition shadow-xl">Start Build</a>
+                </div>
+            </div>
         </div>
     </header>
 
-    <section class="py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="flex flex-col lg:flex-row gap-16 items-center">
-                <div class="lg:w-3/5">
-                    <h3 class="text-xs font-black uppercase tracking-[0.3em] text-blue-600 mb-4">Our Story</h3>
-                    <h2 class="text-4xl font-black text-slate-900 uppercase tracking-tighter mb-8 leading-none">From the Tri-State to <span class="text-blue-700 italic">Nationwide</span></h2>
-                    <div class="text-slate-600 leading-relaxed space-y-6">
-                        <p class="font-bold text-slate-800 text-lg">
-                            We started out in 1996 as a Commercial and Residential Audio/Video Installation company in the Tri-State area. 
-                        </p>
-                        <p>
-                            Today, MS Audio Sound Inc. has grown nationwide, installing across the country as well as St. Croix, US Virgin Islands. With almost three decades of experience, we have become a leading provider of Audio/Video solutions for both residential and commercial markets.
-                        </p>
-                        <p>
-                            Our impressive portfolio ranges from private luxury homes to major commercial malls, showcasing our expertise in automation, theaters, digital signage, and background music systems. Our satisfied clients are a testament to our exceptional work.
-                        </p>
+    <section class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-12 gap-16 items-start">
+                <div class="lg:col-span-7">
+                    <h2 class="text-xs font-black text-blue-500 uppercase tracking-[0.5em] mb-6">Execution & Pedigree</h2>
+                    <p class="text-3xl md:text-4xl font-bold text-white mb-8 tracking-tight leading-tight uppercase">
+                        Nearly three decades of <span class="text-slate-500 italic">uncompromising</span> technology deployment.
+                    </p>
+                    <div class="space-y-6 text-slate-400 text-lg font-light leading-relaxed">
+                        <p>We started in 1996 in the Tri-State area and have since scaled to a <span class="text-white font-medium italic uppercase">nationwide force</span>, including projects in St. Croix and across the US Virgin Islands.</p>
+                        <p>Our portfolio includes complex automation and theater systems for some of the world's most recognized brands. We are contracted for our precision, scalability, and long-term reliability.</p>
                     </div>
                 </div>
 
-                <div class="lg:w-2/5 bg-slate-50 p-8 md:p-10 rounded-3xl border border-gray-100 shadow-sm">
-                    <h4 class="text-xs font-black uppercase tracking-widest text-gray-400 mb-6">Trusted By National Brands</h4>
-                    <ul class="grid grid-cols-1 gap-4 text-sm font-bold text-slate-700">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span> Smith & Wollensky</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span> Buffalo Wild Wings</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span> Foot Locker</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span> TGI Friday's</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span> Wells Fargo</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span> Barnes & Noble</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-blue-600 rounded-full mr-3"></span> Fidelity Investments</li>
+                <div class="lg:col-span-5 glass p-8 rounded-3xl">
+                    <p class="text-[10px] font-black uppercase tracking-widest text-blue-400 mb-8 border-b border-white/10 pb-4">Institutional Partners</p>
+                    <div class="grid grid-cols-1 gap-y-4">
+                        <div class="flex justify-between border-b border-white/5 pb-2">
+                            <span class="text-white font-bold uppercase tracking-tighter text-sm">Fidelity Investments</span>
+                            <span class="text-blue-500 font-mono text-xs uppercase">Verified</span>
+                        </div>
+                        <div class="flex justify-between border-b border-white/5 pb-2">
+                            <span class="text-white font-bold uppercase tracking-tighter text-sm">Wells Fargo</span>
+                            <span class="text-blue-500 font-mono text-xs uppercase">Verified</span>
+                        </div>
+                        <div class="flex justify-between border-b border-white/5 pb-2">
+                            <span class="text-white font-bold uppercase tracking-tighter text-sm">Barnes & Noble</span>
+                            <span class="text-blue-500 font-mono text-xs uppercase">Verified</span>
+                        </div>
+                        <div class="flex justify-between border-b border-white/5 pb-2">
+                            <span class="text-white font-bold uppercase tracking-tighter text-sm">Buffalo Wild Wings</span>
+                            <span class="text-blue-500 font-mono text-xs uppercase">Verified</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-10 rounded-3xl card-hover">
+                    <div class="accent-border pb-8 mb-8">
+                        <h3 class="text-white font-black uppercase tracking-tighter text-2xl">Sound & Video</h3>
+                    </div>
+                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
+                        <li>System Design & CAD</li>
+                        <li>Multi-Zone Cinematic Audio</li>
+                        <li>Digital Signage Solutions</li>
+                        <li>Satellite Integration</li>
                     </ul>
-                    <p class="mt-8 text-[10px] text-gray-400 italic uppercase tracking-wider font-bold">
-                        Established 1996 • Licensed & Insured
+                </div>
+                <div class="glass p-10 rounded-3xl card-hover">
+                    <div class="accent-border pb-8 mb-8">
+                        <h3 class="text-white font-black uppercase tracking-tighter text-2xl">Data & Comms</h3>
+                    </div>
+                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
+                        <li>Structured Data Cabling</li>
+                        <li>High-Density Networking</li>
+                        <li>Enterprise Intercoms</li>
+                        <li>Fiber Optic Backbone</li>
+                    </ul>
+                </div>
+                <div class="glass p-10 rounded-3xl card-hover">
+                    <div class="accent-border pb-8 mb-8">
+                        <h3 class="text-white font-black uppercase tracking-tighter text-2xl">Smart Control</h3>
+                    </div>
+                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
+                        <li>Whole-Home Automation</li>
+                        <li>Central Vacuum Systems</li>
+                        <li>Access Control Matrices</li>
+                        <li>Technical Consultation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 max-w-7xl mx-auto px-6">
+        <div class="glass rounded-[3rem] p-12 overflow-hidden relative">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 blur-[120px] rounded-full"></div>
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-16 relative z-10">
+                <div class="lg:w-3/5">
+                    <img src="integriti.png" alt="Integriti Protection" class="h-24 w-auto mb-8 brightness-0 invert">
+                    <p class="text-slate-300 text-xl font-light leading-relaxed mb-8">
+                        Our dedicated security infrastructure. Providing 24/7 UL Listed monitoring in partnership with global industry leaders.
                     </p>
+                    <div class="flex gap-6">
+                        <div class="flex items-center text-xs font-black uppercase tracking-widest text-blue-400">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-3 animate-pulse"></span> Professional Monitoring
+                        </div>
+                        <div class="flex items-center text-xs font-black uppercase tracking-widest text-blue-400">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-3 animate-pulse"></span> Smart Integration
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-2/5 flex flex-col items-center bg-white/5 p-12 rounded-[2rem] border border-white/5">
+                    <p class="text-[10px] uppercase tracking-widest text-slate-500 mb-8 font-bold">Strategic Partner</p>
+                    <img src="affiliatedmonitoring.png" alt="Affiliated" class="h-10 w-auto opacity-80">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 max-w-7xl mx-auto px-6 bg-gray-50 rounded-3xl mb-24">
-        <div class="text-center mb-20">
-            <h3 class="text-3xl font-black uppercase tracking-tighter">Complete Service Catalog</h3>
-            <div class="w-20 h-2 bg-blue-700 mx-auto mt-4"></div>
-        </div>
-        
-        <div class="grid md:grid-cols-3 gap-12 mb-20">
-            <div>
-                <h4 class="text-xl font-black text-blue-900 uppercase mb-4 tracking-tight">Sound & Video</h4>
-                <ul class="space-y-3 text-slate-600 font-medium border-l-2 border-blue-700 pl-4 text-left">
-                    <li>Home Theater Systems</li>
-                    <li>Multi-Zone Audio & Video</li>
-                    <li>Commercial Sound Design</li>
-                    <li>Satellite System Installation</li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-xl font-black text-blue-900 uppercase mb-4 tracking-tight">Communication</h4>
-                <ul class="space-y-3 text-slate-600 font-medium border-l-2 border-slate-300 pl-4 text-left">
-                    <li>Phone Systems</li>
-                    <li>Intercom Systems</li>
-                    <li>Structured Data Cabling</li>
-                    <li>WiFi & Networking</li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-xl font-black text-blue-900 uppercase mb-4 tracking-tight">Specialty Systems</h4>
-                <ul class="space-y-3 text-slate-600 font-medium border-l-2 border-slate-300 pl-4 text-left">
-                    <li>Central Vacuum Systems</li>
-                    <li>Smart Home Automation</li>
-                    <li>Access Control</li>
-                    <li>Consultation & Design</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="bg-slate-900 rounded-3xl p-8 md:p-12 text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl border border-slate-800 text-left">
-            <div class="md:w-2/3">
-                <img src="integriti.png" alt="Integriti Protection" class="h-28 w-auto mb-6 brightness-0 invert">
-                
-                <p class="text-slate-400 text-lg mb-6 leading-relaxed">
-                    Alarm monitoring services are provided through our dedicated security division. We offer 24/7 UL Listed professional monitoring to keep your home or business safe.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <span class="text-sm font-bold border border-slate-700 px-4 py-2 rounded-lg text-slate-300 italic">✓ 24/7 Monitoring</span>
-                    <span class="text-sm font-bold border border-slate-700 px-4 py-2 rounded-lg text-slate-300 italic">✓ Smart Phone Integration</span>
-                </div>
-            </div>
-            
-            <div class="md:w-1/3 flex flex-col items-center gap-4 bg-white/5 p-8 rounded-2xl border border-white/10">
-                <p class="text-[10px] uppercase tracking-[0.3em] text-slate-500 font-bold">Authorized Partner</p>
-                <img src="affiliatedmonitoring.png" alt="Affiliated Monitoring Logo" class="h-10 w-auto">
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 bg-blue-900 text-white text-center">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-6">Start Your Project</h2>
-            <p class="text-blue-100 text-lg mb-10">Sales, Design, Professional Installation, and Monitoring.</p>
-            <a href="contact.html" class="bg-white text-blue-900 px-12 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-gray-100 transition shadow-2xl">
-                Get My Free Quote
-            </a>
-        </div>
-    </section>
-
-    <footer class="bg-white border-t border-gray-200 py-16">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-center md:text-left">
-            <div>
-                <img src="ms-audio-logo.png" alt="MS Audio Logo" class="h-10 mx-auto md:mx-0 mb-4 grayscale opacity-60">
-                <p class="text-sm text-gray-500 leading-loose">
+    <footer class="py-20 border-t border-white/5 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-12">
+            <div class="text-center md:text-left">
+                <img src="ms-audio-logo.png" alt="MS Audio" class="h-8 mb-6 mx-auto md:mx-0 opacity-40 grayscale">
+                <p class="text-xs text-slate-500 uppercase tracking-widest leading-loose">
                     434 W Commodore Blvd., Suite 25<br>
                     Jackson, NJ 08527
                 </p>
             </div>
-            <div>
-                <h4 class="font-black text-blue-900 mb-4 uppercase text-xs tracking-widest">Direct Contact</h4>
-                <p class="text-sm text-gray-500 leading-loose">
-                    Phone: 732-833-6446<br>
-                    Email: Rebecca@MSAudio.net
-                </p>
+            <div class="text-center">
+                <p class="text-[10px] text-slate-600 uppercase tracking-[0.4em] mb-4">Design • Sales • Installation</p>
+                <p class="text-slate-400 font-black uppercase text-sm">&copy; 2026 MS Audio & Integriti Protection</p>
             </div>
-            <div class="md:text-right flex flex-col items-center md:items-end justify-center">
-                <p class="text-[10px] text-gray-400 uppercase tracking-widest leading-loose font-bold">
-                    Licensed • Insured<br>
-                    &copy; 2026 MS Audio & Integriti Protection
-                </p>
+            <div class="text-center md:text-right">
+                <p class="text-xs text-slate-500 uppercase tracking-widest font-bold">Licensed & Insured</p>
+                <p class="text-blue-500 font-mono text-xs mt-2 uppercase tracking-widest">NJ License # 12345</p>
             </div>
         </div>
     </footer>
